@@ -44,11 +44,11 @@ def main():
 		arr = line.split()
 		if len(arr) == 2:
 			gifters.append(Player(arr[0], arr[1]))
-		if len(arr) == 3:
+		elif len(arr) == 3:
 			gifters.append(Player(arr[0], arr[1], arr[2]))
 		else:
 			print "Warning: Skipping '" + line + "'"
-	
+
 	while True:
 		receivers = [x for x in gifters]
 		shuffle(receivers)
