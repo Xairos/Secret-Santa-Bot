@@ -41,7 +41,7 @@ def main():
 	d = Debug()
 	d.process(playerPairs)
 
-#	s = SMTP("secretsantasecretservice@gmail.com", "BeqjGh825Gmp")
+#	s = SMTP("secretsantasecretservice@gmail.com", "SECRET")
 #	s.process(playerPairs)
 
 
