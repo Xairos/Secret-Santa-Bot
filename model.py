@@ -9,10 +9,16 @@ class Player():
 	def getname(self):
 		return self.firstname + " " + self.lastname
 
+	def getfirstname(self):
+		return self.firstname
+
 	def __eq__(self, other):
 		if type(other) is type(self):
 			return self.__dict__ == other.__dict__
 		return False
-		
+
 	def tostring(self):
 		return self.firstname + " " + self.lastname
+
+	def getemail(self):
+		return self.email
