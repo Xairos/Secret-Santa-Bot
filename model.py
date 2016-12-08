@@ -12,13 +12,15 @@ class Player():
 	def getfirstname(self):
 		return self.firstname
 
+	def getemail(self):
+		return self.email
+
+	def tostring(self):
+		return self.firstname + " " + self.lastname
+	
 	def __eq__(self, other):
 		if type(other) is type(self):
 			return self.__dict__ == other.__dict__
 		return False
 
-	def tostring(self):
-		return self.firstname + " " + self.lastname
 
-	def getemail(self):
-		return self.email
