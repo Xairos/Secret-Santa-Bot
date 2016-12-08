@@ -38,11 +38,12 @@ def main():
 		print("Found a working combination after " + str(combocount) + " tries.")
 
 	playerPairs = [(a,b) for a,b in zip(gifters, receivers)]
+	
 	d = Debug()
 	d.process(playerPairs)
 
-	#s = SMTP("secretsantasecretservice@gmail.com", "SECRET")
-	#s.process(playerPairs)
+	s = SMTP("secretsantasecretservice@gmail.com", "SECRET")
+	s.process(playerPairs)
 
 if __name__ == '__main__':
 	main()

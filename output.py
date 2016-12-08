@@ -25,12 +25,10 @@ class SMTP(Output):
 
 	def process(self, playerPairs):
 		subject = "🎵It's beginning to feel a lot like Christmas!🎵"
-		body_template = Template("""Hey $gfname, it's that time of year again!
-
-You are $rname's Secret Santa! If you're lucky, $rfname might have put some wishes on the <a href="https://goo.gl/Ue1wYf">Christmas Wishlist</a>. And even if they didn't, consider helping them out by giving them some hints! 
-
-Good luck, and Happy Holidays! 🎄
-- Secret Santa Bot""")
+		body_template = Template("Hey $gfname, it's that time of year again!<br><br>"
+			+ "You are <b>$rname</b>'s Secret Santa! If you're lucky, $rfname might have put some wishes on the <a href=\"https://goo.gl/Ue1wYf\">Christmas Wishlist</a>. And even if they didn't, consider helping them out by giving them some hints!<br><br>"
+			+ "Good luck, and Happy Holidays! 🎄<br>"
+			+ "- Secret Santa Bot")
 		
 		server = smtplib.SMTP('smtp.gmail.com:587')
 		server.ehlo()
@@ -48,6 +46,5 @@ Good luck, and Happy Holidays! 🎄
 			send_this['From'] = self.email_address
 			send_this['To'] = gifter.getemail()
 
-			print send_this.as_string()
 			server.sendmail(self.email_address, gifter.getemail(), send_this.as_string())
 		server.quit()
