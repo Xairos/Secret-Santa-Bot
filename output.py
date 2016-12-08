@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from abc import ABCMeta, abstractmethod
 from email.mime.text import MIMEText
+from email.header import Header
 from string import Template
 import smtplib
 
@@ -43,7 +44,7 @@ Good luck, and Happy Holidays! 🎄
 			body = body_template.substitute(gfname=gifter.getfirstname(), rfname=receiver.getfirstname(), rname=receiver.getname())
 
 			send_this = MIMEText(body, 'html', 'utf-8')
-			send_this['Subject'] = subject
+			send_this['Subject'] = Header(subject, 'utf-8')
 			send_this['From'] = self.email_address
 			send_this['To'] = gifter.getemail()
 
