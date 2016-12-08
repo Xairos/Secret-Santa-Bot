@@ -41,9 +41,8 @@ def main():
 	d = Debug()
 	d.process(playerPairs)
 
-	s = SMTP("secretsantasecretservice@gmail.com", "wW7WsWFz1^*1yxjXU2un")
-	s.process(playerPairs)
-
+	#s = SMTP("secretsantasecretservice@gmail.com", "SECRET")
+	#s.process(playerPairs)
 
 if __name__ == '__main__':
 	main()

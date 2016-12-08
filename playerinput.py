@@ -21,7 +21,7 @@ class CSVPlayerReader(PlayerReader):
 		players = []
 		exclusions = []
 
-		# First name, Last name, Gender, Email
+		# First name, Last name, Email
 		for row in csv.reader(self.playerFile):
 			assert len(row) == 3
 			players.append(Player(*row))
